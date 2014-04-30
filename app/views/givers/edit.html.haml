@@ -1,1 +1,2 @@
-new.html.haml
+= form_for @giver, url:"/givers/#{@giver.id}" do |f|
+	= render "form", f: f

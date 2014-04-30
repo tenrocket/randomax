@@ -1,1 +1,11 @@
-index.html.haml
+%h1 We love our RandomAx givers!
+
+-@givers.each do |g|
+	Name
+	= g.user_name
+	Address
+	= g.address
+	Email
+	= g.email
+
+= button_to "Add New Giver", new_giver_path, method: "get"
