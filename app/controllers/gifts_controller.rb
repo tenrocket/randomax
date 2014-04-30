@@ -31,6 +31,7 @@ class GiftsController < ApplicationController
 	end
 
 	def show
+		@gift = Gift.find(params[:id])
 	end
 
 	private

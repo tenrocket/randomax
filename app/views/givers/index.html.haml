@@ -22,7 +22,7 @@
 			%tr
 				%td= giver.user_name
 				%td= giver.address
-				%td= gvier.email
+				%td= giver.email
 				%td.btn.btn-default= link_to 'Show', giver
 				%td.btn.btn-warning= link_to 'Edit', edit_giver_path(giver)
 				%td.btn.btn-danger= link_to 'Destroy', giver, method: :delete, data: { confirm: 'Are you sure?' }
