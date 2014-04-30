@@ -1,1 +1,29 @@
-_form.html.haml
+.field
+  = f.label :title
+  %br/
+  = f.text_field :title
+.field
+  = f.label :message
+  %br/
+  = f.text_field :message
+.field
+  = f.label :due_date
+  %br/
+  = f.date_select :due_date
+.field
+  = f.label :asker_id
+  %br
+  =f.integer :asker_id
+  %br
+  .field
+  = f.label :giver_id
+  %br
+  =f.integer :giver_id
+  %br
+  .field
+  = f.label :gift_id
+  %br
+  =f.integer :gift_id
+  %br
+.actions
+  = f.submit "Submit"

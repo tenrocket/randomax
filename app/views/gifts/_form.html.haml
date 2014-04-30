@@ -1,1 +1,14 @@
-_form.html.haml
+.field
+  = f.label :name
+  %br/
+  = f.text_field :name
+.field
+  = f.label :description
+  %br/
+  = f.text_field :description
+.field
+  = f.label :price
+  %br/
+  = f.integer :price
+.actions
+  = f.submit "Submit"
