@@ -31,6 +31,7 @@ class GiversController < ApplicationController
 	end
 
 	def show
+		@giver = Giver.find(params[:id])
 	end
 
 	private
