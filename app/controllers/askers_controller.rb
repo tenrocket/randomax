@@ -31,6 +31,7 @@ class AskersController < ApplicationController
 	end
 
 	def show
+		@asker = Asker.find(params[:id])
 	end
 
 	private
