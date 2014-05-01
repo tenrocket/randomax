@@ -1,3 +1,8 @@
-%p= @asker.user_name
-%p= @asker.address
-%p= @asker.email
+= render 'nav_bar'
+.container
+	.row
+		.col-md-12
+			.col-md-4
+				%p= @asker.user_name
+				%p= @asker.address
+				%p= @asker.email
