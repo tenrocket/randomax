@@ -1,18 +1,21 @@
 = render 'nav_bar'
-%table.table.striped
-	%thead
-		%tr
-			%th User_Name
-			%th Address
-			%th Email
-			%th{colspan: "3"}
-	%tbody
-		- @givers.each do |giver|
-			%tr
-				%td= giver.user_name
-				%td= giver.address
-				%td= giver.email
-				%td.btn.btn-default= link_to 'Show', giver
-				%td.btn.btn-warning= link_to 'Edit', edit_giver_path(giver)
-				%td.btn.btn-danger= link_to 'Destroy', giver, method: :delete, data: { confirm: 'Are you sure?' }
+.container
+	.row
+		.col-md-10
+			%table.table.striped
+				%thead
+					%tr
+						%th User_Name
+						%th Address
+						%th Email
+						%th{colspan: "3"}
+				%tbody
+					- @givers.each do |giver|
+						%tr
+							%td= giver.user_name
+							%td= giver.address
+							%td= giver.email
+							%td= link_to 'Show', giver, :class => "btn btn-default"
+							%td= link_to 'Edit', edit_giver_path(giver), :class => "btn btn-warning"
+							%td= link_to 'Destroy', giver, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger"
 
