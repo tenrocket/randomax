@@ -12,9 +12,7 @@
 				%td= gift.name
 				%td= gift.description
 				%td= gift.price
-				%td.button.btn.btn-default= link_to 'Show', gift
-
-
+				%td=
 				%td.btn.btn-default= link_to 'Show', gift
 				%td.btn.btn-warning= link_to 'Edit', edit_gift_path(gift)
 				%td.btn.btn-danger= link_to 'Destroy', gift, method: :delete, data: { confirm: 'Are you sure?' }
