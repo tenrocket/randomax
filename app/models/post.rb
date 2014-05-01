@@ -23,4 +23,18 @@ class Post < ActiveRecord::Base
 		joins(:giver).where("givers.user_name Like ?", giver)
 	end
 
+	def self.asker(asker)
+		joins(:asker).where("askers.user_name Like ?", asker)
+	end
+
+	def self.search(params)
+
+		search_term = params[:search_term]
+		search = Post.all
+
+		if search_term != " "
+			search = search.where("posts.title Like ? OR posts.message Like ? OR posts.asker.address Like ?", "%#{search}%", "%#{search}%", "%#{search}%")
+		end
+	end
+
 end

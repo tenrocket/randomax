@@ -23,7 +23,8 @@
   .field
   = f.label :gift_id
   %br
-  =f.text_field :gift_id
+  =f.select :gift_id, Gift.all.collect {|gift| [ gift.name, gift.id ]}
+  %br
   %br
 .actions
   = f.submit "Submit"

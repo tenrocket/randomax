@@ -14,5 +14,7 @@
       %li
         %a{href: "/posts"} Marketplace
       %form.navbar-form.navbar-left
-        %li
-          %input.form-control.col-lg-8{placeholder: "Search", type: "text"}/
+        %li 
+          = form_tag search_posts_path, method: "get" do
+            = text_field_tag "search[search_term]"
+            = submit_tag "Search", method: "get"
