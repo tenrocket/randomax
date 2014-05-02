@@ -1,4 +1,5 @@
 class GiversController < ApplicationController
+	skip_filter :ensure_logged_in
 
 	def index
 		@givers = Giver.all
@@ -10,8 +11,11 @@ class GiversController < ApplicationController
 
 	def create
 		@new_giver = Giver.new(giver_params)
-		@new_giver.save
-		redirect_to givers_path
+		if @new_giver.save
+			redirect_to givers_path, notice: "Thanks for signing up!"
+		else
+			render :new, "Bummer.  Your registration attempt failed."
+		end
 	end
 
 	def edit

@@ -1,4 +1,6 @@
 class Giver < ActiveRecord::Base
+	has_secure_password
+	
 	has_many :posts
 	has_many :gifts, through: :posts
 	has_many :askers, through: :posts
