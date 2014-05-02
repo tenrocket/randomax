@@ -10,8 +10,11 @@ class AskersController < ApplicationController
 
 	def create
 		@new_asker = Asker.new(asker_params)
-		@new_asker.save
-		redirect_to askers_path
+		if @new_asker.save
+			redirect_to askers_path, notice: "Thanks for signing up!"
+		else
+			render :new, "Bummer.  Your registration attempt failed."
+		end
 	end
 
 	def edit
