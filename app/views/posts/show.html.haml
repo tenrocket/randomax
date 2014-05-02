@@ -34,5 +34,8 @@
 					%p= @post.due_date
 					%p= @post.user.user_name
 					%p= @post.gift.name
+					%p= @post.is_given
+					= button_to "I Got This One!", change_is_given_post_path(@post), method: 'patch', :class => "btn btn-primary"
+					%br
 					= button_to 'Go Back', posts_path, method: 'get', :class => "btn btn-primary"
 					.col-lg-6.col-lg-offset-3

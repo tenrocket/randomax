@@ -39,6 +39,17 @@ class PostsController < ApplicationController
 		render posts_path
 	end
 
+	def change_is_given 
+		@post = Post.find(params[:id])
+		if @post.is_given
+			val = false
+		else
+			val = true
+		end
+		@post.update_attributes(:is_given => val)
+		redirect_to posts_path
+	end
+
 	private
 
 	def post_params

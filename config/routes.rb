@@ -15,6 +15,11 @@ Rails.application.routes.draw do
     collection do
       get :search
     end
+
+    member do #one post
+      patch :change_is_given
+    end
+
   end
   
   #resources :sessions, only: [:new, :create, :destroy]
