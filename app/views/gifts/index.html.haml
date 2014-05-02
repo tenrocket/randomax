@@ -1,6 +1,10 @@
 = render 'nav_bar'
 .container
 	.row
+		.col-md-2
+			= button_to 'Add New Gift', new_gift_path, method: 'get', :class => "btn btn-primary"
+			%br
+	.row
 		.col-md-10
 			%table.table.striped
 				%thead

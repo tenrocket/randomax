@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   get 'home/index'
-  get "login" => "sessions#new"
-  get "logout" => "sessions#destroy"
+  # get "login" => "sessions#new"
+  # get "logout" => "sessions#destroy"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -17,7 +17,7 @@ Rails.application.routes.draw do
     end
   end
   
-  resources :sessions, only: [:new, :create, :destroy]
+  #resources :sessions, only: [:new, :create, :destroy]
 
 
   # Example of regular route:
