@@ -3,6 +3,12 @@
 .container
 	.row
 		.col-md-10
+			%h1 Thanks for registering!
+			%h3 Now see how you can help out a farmer
+	.row
+	= button_to 'See Requests', posts_path, method: 'get', :class => "btn btn-primary"
+	.row
+		.col-md-10
 			%table.table.striped
 				%thead
 					%tr

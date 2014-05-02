@@ -1,9 +1,39 @@
-= render 'nav_bar'
-.container
-	.row
-		.col-md-12
-			.col-md-4
-				%p= @user.user_name
-				%p= @user.address
-				%p= @user.email
+
+%html{lang: "en"}
+	%head
+		%meta{charset: "utf-8"}/
+		%meta{content: "width=device-width, initial-scale=1.0", name: "viewport"}/
+		%meta{content: "", name: "description"}/
+		%meta{content: "", name: "author"}/
+		%link{href: "http://www.blacktie.co/demo/minimal/assets/ico/favicon.png", rel: "shortcut icon"}/
+		%title MINIMAL - Free Bootstrap 3 Theme
+		/ Bootstrap core CSS
+		%link{href: "http://www.blacktie.co/demo/minimal/assets/css/bootstrap.css", rel: "stylesheet"}/
+		/ Custom styles for this template
+		%link{href: "http://www.blacktie.co/demo/minimal/assets/css/main.css", rel: "stylesheet"}/
+		%link{href: "http://www.blacktie.co/demo/minimal/assets/css/font-awesome.min.css", rel: "stylesheet"}/
+		%script{src: "http://www.blacktie.co/demo/minimal/assets/js/jquery.min.js"}
+		%script{src: "http://www.blacktie.co/demo/minimal/assets/js/modernizr.custom.js"}
+		%link{href: "http://fonts.googleapis.com/css?family=Oswald:400,300,700", rel: "stylesheet", type: "text/css"}/
+		%link{href: "http://fonts.googleapis.com/css?family=EB+Garamond", rel: "stylesheet", type: "text/css"}/
+		/ HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries
+		/[if lt IE 9]
+			<script src="assets/js/html5shiv.js"></script>
+			<script src="assets/js/respond.min.js"></script>
+	%body{"data-offset" => "0", "data-spy" => "scroll", "data-target" => "#theMenu"}
+
+
+		/ ========== HEADER SECTION ==========
+		%section#home{name: "home"}
+		#headerwrap
+			.container
+				%br/
+				.row
+					%h1 Thanks for registering!
+					%br/
+					%h3= @user.user_name
+					%p= @user.email
+					= button_to 'See Requests', posts_path, method: 'get', :class => "btn btn-primary"
+					%p= @user.address
+
 
