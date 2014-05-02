@@ -9,8 +9,7 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'home#index'
 
-  resources :givers
-  resources :askers
+  resources :users
   resources :gifts
   resources :posts do
     collection do

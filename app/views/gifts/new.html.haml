@@ -4,8 +4,8 @@
 	.modal-dialog
 		.modal-content
 			.modal-header
-				%button.close{"aria-hidden" => "true", "data-dismiss" => "modal", :type => "button"} ×
-				%h1.text-center Edit Profile
+				/ %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", :type => "button"} ×
+				%h1.text-center New Gift
 			.modal-body
 				= form_for @new_gift do |f|
 					= render 'form', f: f

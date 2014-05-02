@@ -1,6 +1,5 @@
 class Post < ActiveRecord::Base
-	belongs_to :asker
-	belongs_to :giver
+	belongs_to :user
 	belongs_to :gift
 
 	# validates_presence_of :title
@@ -19,12 +18,8 @@ class Post < ActiveRecord::Base
 		where('due_date < ?', end_date)
 	end
 
-	def self.giver(giver)
-		joins(:giver).where("givers.user_name Like ?", giver)
-	end
-
-	def self.asker(asker)
-		joins(:asker).where("askers.user_name Like ?", asker)
+	def self.user(user)
+		joins(:user).where("users.user_name Like ?", user)
 	end
 
 	def self.search(params)
@@ -33,7 +28,7 @@ class Post < ActiveRecord::Base
 		search = Post.all
 
 		if search_term != " "
-			search = search.where("posts.title Like ? OR posts.message Like ? OR posts.asker.address Like ?", "%#{search}%", "%#{search}%", "%#{search}%")
+			search = search.where("posts.title Like ? OR posts.message Like ? OR posts.user.address Like ?", "%#{search}%", "%#{search}%", "%#{search}%")
 		end
 	end
 
