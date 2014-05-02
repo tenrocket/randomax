@@ -11,14 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140501202720) do
-
-  create_table "askers", force: true do |t|
-    t.string "user_name"
-    t.string "address"
-    t.string "email"
-    t.string "password_digest"
-  end
+ActiveRecord::Schema.define(version: 20140502170821) do
 
   create_table "gifts", force: true do |t|
     t.string  "name"
@@ -26,23 +19,23 @@ ActiveRecord::Schema.define(version: 20140501202720) do
     t.integer "price"
   end
 
-  create_table "givers", force: true do |t|
-    t.string "user_name"
-    t.string "address"
-    t.string "email"
-    t.string "password_digest"
-  end
-
   create_table "posts", force: true do |t|
     t.string   "title"
     t.string   "message"
     t.date     "due_date"
-    t.integer  "asker_id"
-    t.integer  "giver_id"
     t.integer  "gift_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "gift_given", default: false
+    t.integer  "user_id"
+    t.boolean  "is_given",   default: false
+  end
+
+  create_table "users", force: true do |t|
+    t.string  "user_name"
+    t.string  "address"
+    t.string  "email"
+    t.string  "password_digest"
+    t.boolean "is_asker"
   end
 
 end

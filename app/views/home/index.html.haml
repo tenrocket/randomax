@@ -30,8 +30,10 @@
             %b Random Ax
         .navbar-collapse.collapse
           %ul.nav.navbar-nav.navbar-right
+            / %li
+            /   %a{href: "/login"} Login
             %li
-              %a{href: "/login"} Login
+              %a{href: "/users/new"} Register
         / /.nav-collapse
     #headerwrap
       .container
@@ -41,10 +43,10 @@
               Buy a tool.
               %br/
               Empower a farmer.
-            %form.form-inline{role: "form"}
-              .form-group
-                %input#exampleInputEmail1.form-control{placeholder: "Enter your email address", type: "email"}/
-              %button.btn.btn-warning.btn-lg{type: "submit"} Sounds Awesome!
+            / %form.form-inline{role: "form"}
+            /   .form-group
+            /     %input#exampleInputEmail1.form-control{placeholder: "Enter your email address", type: "email"}/
+            /   %button.btn.btn-warning.btn-lg{type: "submit"} Sounds Awesome!
           / /col-lg-6
           .col-lg-6
             %img.img-responsive{alt: "", src: "http://www.blacktie.co/demo/flatty/assets/img/ipad-hand.png"}/

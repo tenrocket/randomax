@@ -11,16 +11,10 @@
   %br/
   = f.date_field :due_date
 .field
-  = f.label :asker_id
+  = f.label :user_id
   %br
-  =f.text_field :asker_id
-  %br
-  .field
-  = f.label :giver_id
-  %br
-  =f.text_field :giver_id
-  %br
-  .field
+  =f.select :user_id, User.all.collect {|user| [ user.user_name, user.id ]}
+.field
   = f.label :gift_id
   %br
   =f.select :gift_id, Gift.all.collect {|gift| [ gift.name, gift.id ]}
